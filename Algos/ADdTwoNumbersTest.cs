@@ -1,4 +1,6 @@
-﻿namespace Algos;
+﻿using System.Numerics;
+
+namespace Algos;
 
 public class ADdTwoNumbersTest
 {
@@ -43,9 +45,7 @@ public class ADdTwoNumbers
         inter += node.val;
 
         if (node.next != null)
-        {
             return Calc(node.next, inter);
-        }
 
         return inter.ToStringArray();
     }
@@ -53,11 +53,11 @@ public class ADdTwoNumbers
 
 public static class AddTwoNumbersExtensions
 {
-    public static int ToInt(this IEnumerable<string> arr)
+    public static BigInteger ToInt(this IEnumerable<string> arr)
     {
         var res = "";
         arr.ToList().ForEach(x => res += x);
-        return int.Parse(res);
+        return BigInteger.Parse(res);
     }
 
     public static ListNode ToListNode(this IEnumerable<string> arr)
