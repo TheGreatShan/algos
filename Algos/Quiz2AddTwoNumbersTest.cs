@@ -2,7 +2,7 @@
 
 namespace Algos;
 
-public class ADdTwoNumbersTest
+public class Quiz2AddTwoNumbersTest
 {
     [Fact]
     public void Test1()
@@ -11,24 +11,13 @@ public class ADdTwoNumbersTest
         var two = new ListNode(5, new ListNode(6, new ListNode(4)));
         var expected = new ListNode(7, new ListNode(0, new ListNode(8)));
 
-        var res = new ADdTwoNumbers().AddTwoNumbers(one, two);
+        var res = new Quiz2AddTwoNumbers().AddTwoNumbers(one, two);
 
         Assert.Equivalent(expected, res);
     }
 }
 
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     public int val;
- *     public ListNode next;
- *     public ListNode(int val=0, ListNode next=null) {
- *         this.val = val;
- *         this.next = next;
- *     }
- * }
- */
-public class ADdTwoNumbers
+public class Quiz2AddTwoNumbers
 {
     public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
     {
@@ -80,7 +69,7 @@ public static class AddTwoNumbersExtensions
     {
         if (arr.Count == 0)
             return prev;
-
+        
         var last = arr.Last();
         arr.RemoveAt(arr.Count - 1);
 
@@ -88,6 +77,7 @@ public static class AddTwoNumbersExtensions
     }
 }
 
+// Provided by LeetCode
 public class ListNode
 {
     public int val;
